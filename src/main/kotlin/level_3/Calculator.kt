@@ -54,7 +54,7 @@ class Calculator {
 
             println("답은 $result")
 
-            println("-1:종료 / 0:추가 연산 / 1:새로운 계산")
+            println("-1:처음으로 돌아가기 / 0:추가 연산 / 1:새로운 계산")
             val question = exception("question")// 계속할지 질문
             // -1:종료 / 0:추가 연산 / 1:새로운 계산
             if (question == -1) {
