@@ -14,6 +14,7 @@ Calculator 클래스와 관계를 맺기
 fun main() {
     Calculator()
 }
+
 //todo 0.1 + 0.2 결과 오류 -> BigDecimal ?
 //todo 1 + 1 = 2.0 -> double로 받았기 때문에 수정 필요
 
@@ -61,12 +62,25 @@ fun exception(type: String): Any {
                 }
             }
         }
-
-        else -> { //"num"
+        "numDouble" -> {
             while (true) {
                 try {
                     val number = readln()
-                    return number
+
+                    return number.toDouble() ?: continue
+
+                } catch (e: NumberFormatException) {
+                    println("숫자를 입력해주세요.")
+                }
+            }
+        }
+
+        else -> { //"numInt"
+            while (true) {
+                try {
+                    val number = readln()
+
+                    return number.toInt() ?: continue
 
                 } catch (e: NumberFormatException) {
                     println("숫자를 입력해주세요.")

@@ -73,12 +73,12 @@ class Calculator {
 
     private fun doubleCalc() {
         println("첫번째 수 입력")
-        var a = exception("num").toString().toDouble()
+        var a = exception("numDouble").toString().toDouble()
         while (true) { // while문을 주어 추가 연산이 가능하도록 함
             println("연산자 입력")
             val op = exception("op").toString()
             println("두번째 수 입력")
-            val b = exception("num").toString().toDouble()
+            val b = exception("numDouble").toString().toDouble()
             val result = calculation(a, op, b)
             //기본 컴퓨터 계산기는 15자리까지 구현이 나와서 15자리까지 구현
             //왜 ? 일반적으로 계산했을때 0.1 + 0.2 = 0.30000000000000004라는 값이 나오는 에러 발생
@@ -97,7 +97,7 @@ class Calculator {
                 continue
             } else if (question == 1) {
                 println("첫번째 수 입력")
-                a = exception("num").toString().toDouble()
+                a = exception("numDouble").toString().toDouble()
             }
         }
     }
