@@ -19,7 +19,7 @@ fun main() {
 
 fun exception(type: String): Any {
     val opList = listOf("*", "+", "-", "/", "%")
-    val questionList = listOf(-1,0,1)
+    val questionList = listOf(-1, 0, 1)
     return when (type) {
         "op" -> {
             while (true) {
@@ -35,24 +35,38 @@ fun exception(type: String): Any {
                 }
             }
         }
+
         "question" -> {
-            while(true){
+            while (true) {
                 try {
                     val question = readln().toInt()
-                    if(question in questionList){
+                    if (question in questionList) {
                         return question
                     }
-                }catch (e: NumberFormatException){
-                    println("[-1:종료 / 0:추가 연산 / 1:새로운 계산] \n 보기에 맞는 선택을 해주세요.")
+                } catch (e: NumberFormatException) {
+                    println("[-1:처음으로 돌아가기 / 0:추가 연산 / 1:새로운 계산] \n 보기에 맞는 선택을 해주세요.")
                 }
             }
         }
 
-        else -> {
+        "intOrDouble" -> {
+            while (true) {
+                try {
+                    val intOrDouble = readln().toInt()
+                    if (intOrDouble == -1 || intOrDouble == 1 || intOrDouble == 2) {
+                        return intOrDouble
+                    }
+                } catch (e: NumberFormatException) {
+                    println("[-1 : 종료 / 1 : 정수 계산 / 2 : 실수 계산] \n 보기에 맞는 선택을 해주세요.")
+                }
+            }
+        }
+
+        else -> { //"num"
             while (true) {
                 try {
                     val number = readln()
-                    return number.toDouble()
+                    return number
 
                 } catch (e: NumberFormatException) {
                     println("숫자를 입력해주세요.")
