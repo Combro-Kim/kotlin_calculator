@@ -5,6 +5,21 @@ import level_3.OperationList.DivideOperation
 import level_3.OperationList.MultiplyOperation
 import level_3.OperationList.SubstractOperation
 
+// todo 문제점 1
+//  0.1 + 0.2 = 0.30000000000000004 ?! 이상하게 나온다.
+//  시도1. toBigDecimal 사용
+//  -> 나누어떨어지지 않는 수를 계산하면 반올림을 해버림
+//  ex) 5 / 3 = 2.0 ?!
+
+// todo 문제점 2
+//  1 + 1 = 2.0 <- 맞게 떨어지면 소수점 뒤를 없애고 싶다.
+//  시도1. 1로 나눠서 소수점이 없으면 toInt로 출력?,,
+//  시도2. type별로 나눠서 결과 출력?,,
+
+// todo
+//  1. 처음 값을 받아올때 double인지 int인지 확인?
+//  2. 출력되는 값을 가지고 확인?
+
 class Calculator {
     init {
         println("첫번째 수 입력")
@@ -14,26 +29,7 @@ class Calculator {
             val op = exception("op").toString()
             println("두번째 수 입력")
             val b = exception("num").toString().toDouble()
-
-
-
             val result = calculation(a,op,b)
-
-
-            //todo result의 값이 정수로 떨어지면 .0 제거 (현재 double형으로 받아와서 발생)
-            // 1 + 1 = 2.0
-            // 시도1. 1로 나눠서 소수점이 없으면 toInt로 출력?,,
-            // 시도2. type별로 나눠서 결과 출력?,,
-
-            // todo
-            //  0.1 + 0.2 = 0.30000000000000004
-            //  BigDecimal (?)
-            //  BingDecimal 사용 -> 5 / 3 = 2.0
-
-            // todo
-            //  1. 처음 값을 받아올때 double인지 int인지 확인?
-            //  2. 출력되는 값을 가지고 확인?
-
 
             println("답은 $result")
 

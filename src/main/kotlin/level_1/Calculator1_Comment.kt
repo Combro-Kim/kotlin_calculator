@@ -27,21 +27,20 @@ fun main() {
     println(result)
 }
 
-fun ex(type: String): Any {
+fun ex(type: String): Any { //강의를 보고 예외처리 과정을 만들었다.
     val opList = listOf("*", "+", "-", "/", "%")
     return when (type) {
         //연산자를 받을때
         "op" -> {
             while (true) {
                 try {
-                    val operator = readln() //값 받기
+                    val operator = readln() //연산자 받기
                     if (operator in opList) {
                         return operator
                     } else {
                         println("연산자를 다시 입력해주세요.")
                     }
                 } catch (e: NumberFormatException) {
-                    println("알맞은 연산자를 입력해주세요.")
                 }
             }
         }

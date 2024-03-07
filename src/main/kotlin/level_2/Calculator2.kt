@@ -8,7 +8,7 @@ fun main() {
 
 fun exception(type: String): Any {
     val opList = listOf("*", "+", "-", "/", "%")
-    val questionList = listOf(-1,0,1)
+    val questionList = listOf(-1,0,1) // -1,0,1을 입력받아 종료/추가연산/새로운 연산을 만듬
     return when (type) {
         "op" -> {
             while (true) {
