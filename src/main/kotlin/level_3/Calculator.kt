@@ -6,7 +6,7 @@ import level_3.OperationList.MultiplyOperation
 import level_3.OperationList.SubstractOperation
 import kotlin.math.floor
 
-class Calculator {
+open class Calculator {
     init {
         while (true) {
             println("[-1: 종료 / 1 : 정수 계산 / 2 : 실수 계산]")

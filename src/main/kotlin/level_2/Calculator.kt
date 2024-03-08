@@ -11,7 +11,6 @@ class Calculator {
             val op = exception("op").toString()
             println("두번째 수 입력")
             val b = exception("num").toString().toDouble()
-
             val result = when (op) {
                 "+" -> a + b
                 "-" -> a - b
